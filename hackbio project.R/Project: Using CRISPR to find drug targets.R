@@ -5,4 +5,5 @@ DeltaE <- ((gene.data$Beta_5d.release_etoposide)-(gene.data$Beta_Untreated_day14
 #creating a new column for DeltaE in the data set variable
 gene.data <- cbind(gene.data,DeltaE)
 #genes with dependency scores less than -1 are more essential for cancer cells (reference project instructions)
-#identify genes with a ΔE score greater than 0.2 and a dependency (Depmap) score less than -1
+#filter genes with a ΔE score greater than 0.2 and a dependency (Depmap) score less than -1
+target.genes <- subset(gene.data, DeltaE > 0 & Depmap < -1)
