@@ -7,3 +7,6 @@ gene.data <- cbind(gene.data,DeltaE)
 #genes with dependency scores less than -1 are more essential for cancer cells (reference project instructions)
 #filter genes with a ΔE score greater than 0.2 and a dependency (Depmap) score less than -1
 target.genes <- subset(gene.data, DeltaE > 0 & Depmap < -1)
+#extracting the names of the target genes
+target.genes$Gene
+#target genes identified, proceed to perform functional enrichment on the target genes
